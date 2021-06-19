@@ -1,0 +1,160 @@
+$small: 768px;
+$extra-small: 468px;
+
+@font-face {
+  font-family: Code-Pro-Black;
+  src: url(../fonts/CodeProBlack.otf);
+  font-weight: bold;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Code-Pro-Black, sans-serif;
+  background: #343f5d;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.hero_left {
+  position: absolute;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url('../images/hero-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.hero_right {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: 0;
+  background-image: url('../images/hero-right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.hero_right, .hero_left {
+  @media (max-width: $small) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media (max-width: $extra-small) {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+.weaponsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: 2s ease-in-out;
+}
+
+.buttonStart {
+  font-size: 16px;
+  background-color: #a44a00;
+  border: 2px solid #ca6405;
+  border-radius: 50%;
+  padding: 20px 10px;
+  font-family: Code-Pro-Black, sans-serif;
+  color: #fff;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.buttonPlay {
+  @extend .buttonStart;
+  padding: 22px 10px;
+}
+
+.paper {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-color: #a44a00;
+  background-image: url('../images/paper.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 50%;
+  border: 2px solid #ca6405;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &.selected {
+    background-color: #cc6506;
+    border: 2px solid #a44a00;
+  }
+}
+
+.rock {
+  @extend .paper;
+  background-image: url('../images/stone.png');
+}
+
+.scissors {
+  @extend .paper;
+  background-image: url('../images/scissors.png');
+}
+
+.gameMainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.messageContainer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  transition: 2s ease-in-out;
+  p {
+    font-size: 17px;
+    color: #fff;
+    span {
+      border-bottom: 2px solid #ca6405;;
+    }
+  }
+  p.animated {
+    animation: animate 1.4s infinite linear;
+    @keyframes animate {
+      0% {font-size: 18px}
+      25% {font-size: 20px}
+      50% {font-size: 22px}
+      75% {font-size: 20px}
+      100% {font-size: 18px}
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.opacity {
+  opacity: 0.3;
+}
