@@ -14,8 +14,8 @@ module.exports = {
     plugins: [
         new ESLintPlugin(),
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "../main.html"
+            template: "./src/main.html",
+            filename: "../index.html"
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css'
